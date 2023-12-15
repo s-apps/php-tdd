@@ -79,3 +79,9 @@ Time: 00:00.017, Memory: 8.00 MB
 
 OK (2 tests, 2 assertions)
 ```
+# Classes com dependências
+A ideia de um teste de unidade é realmente testar a classe de maneira isolada, sem qualquer interferência das classes que a rodeiam.
+## Mock objects
+No exemplo [app/Email/Send.php](app/Email/Send.php), foi criado uma injeção de dependência pelo método construtor da classe [app/Email/EmailSender.php](app/Email/EmailSender.php) e quero criar testes para a menor unidade possível que no caso é a classe Send.
+O PHPUnit fornece uma solução que simula o objeto injetado EmailSender, fazendo com que centralizemos nossos testes somente para a classe Send.
+Mais sobre Mock Objects: [https://docs.phpunit.de/en/10.5/test-doubles.html#mock-objects](https://docs.phpunit.de/en/10.5/test-doubles.html#mock-objects)
